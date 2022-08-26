@@ -13,7 +13,8 @@ function Protected({ message, nftList }) {
             {nftList.map((e) => {
                 return (<img src={JSON.parse(e.metadata).image} alt="nftImg" height={100}/>)
             })}
-            <pre>{JSON.stringify(nftList, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(nftList, null, 2)}</pre> */}
+            <pre>{nftList[0].metadata}</pre>
         </div>
     )
 }
