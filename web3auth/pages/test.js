@@ -32,3 +32,22 @@ export default function test() {
 }
 
 
+// function test() {
+//     Moralis.start({
+//         apiKey: 'wuTRXSGYCbL42JbmFQH7SKkKCg6OE6uDuWJS3moULHsKK912VMGJanJvEE7JRFvf',
+//     });
+    
+//     response = Moralis.EvmApi.account.getNFTs({
+//         address,
+//         chain,
+//     });
+//     // response.then((res) => {console.log("what response is : ", res._data.result)})
+
+//     return {
+//         props: {
+//             nfts: response.then((res) => {console.log("what response is : ", res._data.result)})
+//         }
+//     }
+// }
+
+// test()
