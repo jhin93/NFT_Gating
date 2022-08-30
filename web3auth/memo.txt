@@ -7,5 +7,6 @@
 
 1-1. 입력된 특정 nft에 접근할 때, 소유주가 아닐 경우 "Sorry, you don't have our NFT" 가 노출이 되어야 하는데 안되고 있음.
 원인 : Cannot read property 'metadata' of undefined. metadata를 못읽음.
-<pre>{JSON.stringify(nftList, null, 2)}</pre> -- 원래 코드는 이거였고 내가 변형한 코드를 못읽음 
+<pre>{JSON.stringify(nftList, null, 2)}</pre> -- 원래 코드는 이거였고 내가 변형한 코드를 못읽음
+아마도 metadata description에 다운로드 링크가 없어서 metadata 형태가 안맞아서 그런듯? 
 개선 방향 : 다른 계정으로 로그인했을 때, 에러로 안 뜨는게 아니라 "Sorry..."로 시작하는 구문이 나와야 함.

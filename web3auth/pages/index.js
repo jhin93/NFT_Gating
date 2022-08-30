@@ -22,7 +22,9 @@ function HomePage() {
 
     return (
         <div>
-            Welcome to Next.js! Go to http://localhost:3000/signin
+            Welcome to Next.js! 
+            <br></br>
+            <a href='http://localhost:3000/signin'>Go to SignIn</a>
         </div>
     )
 }
