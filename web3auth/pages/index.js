@@ -16,7 +16,9 @@ function HomePage() {
         address,
         chain,
     });
-    response.then((res) => {console.log("what response is : ", res._data.result)})
+    response.then((res) => {
+        console.log("what response is : ", res._data.result)
+    })
 
     return (
         <div>

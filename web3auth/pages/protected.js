@@ -2,19 +2,23 @@ import { getSession } from 'next-auth/react';
 import Moralis from 'moralis';
 import { useRouter } from 'next/router';
 
-function Protected({ message, nftList }) {
+function Protected({ message, nftList, metaData }) {
     const {push} = useRouter();
-
+    const downlink = JSON.stringify(metaData).split(',')[1].split('"')[3]
     return(
         <div>
             <button onClick={() => push('/user')}>Profile</button>
             <h3>Protected content</h3>
             <p>{message}</p>
+            {/* <p>{JSON.stringify(test).split(',')[1].split('"')[3]}</p> */}
+            <a href={downlink}>Download Link</a>
+            <br></br>
+            <br></br>
             {nftList.map((e) => {
                 return (<img src={JSON.parse(e.metadata).image} alt="nftImg" height={100}/>)
             })}
-            {/* <pre>{JSON.stringify(nftList, null, 2)}</pre> */}
-            <pre>{nftList[0].metadata}</pre>
+            <pre>{JSON.stringify(nftList, null, 2)}</pre>
+            {/* <pre>{nftList[0].metadata}</pre> */}
         </div>
     )
 }
@@ -48,6 +52,7 @@ export async function getServerSideProps(context) {
                 // if user has at least one NFT he will get protected content
                 nftList.raw.total > 0 ? 'Nice! You have our NFT' : "Sorry, you don't have our NFT",
             nftList: nftList.raw.result,
+            metaData: nftList.raw.result[0].metadata
         },
     };
 

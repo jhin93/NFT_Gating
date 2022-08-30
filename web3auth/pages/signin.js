@@ -43,6 +43,9 @@ function SignIn() {
         <div>
             <h3>Web3 Authentication</h3>
             <button onClick={() => handleAuth()}>Authenticate via Metamask</button>
+            <br></br>
+            <br></br>
+            <a style={{color: 'blue', textDecoration: 'underline'}} onClick={() => handleAuth()}>Authenticate via Link for Download test</a>
         </div>
     );
 }
