@@ -15,7 +15,13 @@ export default function test() {
         address,
         chain,
     });
-    console.log("response : ", response);
+
+    // console.log("response : ", response);
+
+    response.then((res) => {
+        console.log("result : ", res._data.result);
+    })
+
 }
 
 
