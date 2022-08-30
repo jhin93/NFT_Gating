@@ -9,7 +9,6 @@ const chain = EvmChain.MUMBAI;
 export default function test() {
     Moralis.start({
         apiKey: 'wuTRXSGYCbL42JbmFQH7SKkKCg6OE6uDuWJS3moULHsKK912VMGJanJvEE7JRFvf',
-        // ...and any other configuration
     });
     
     const response = Moralis.EvmApi.account.getNFTs({
