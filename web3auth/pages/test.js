@@ -18,9 +18,13 @@ export default function test() {
 
     // console.log("response : ", response);
 
-    response.then((res) => {
-        console.log("result : ", res._data.result);
-    })
+    response
+        .then((res) => {
+            console.log("result : ", res._data.result);
+        })
+        .catch((error) => {
+            console.error(error);
+          });
 
 }
 
