@@ -1,6 +1,6 @@
 
 import Moralis from 'moralis';
-import { EvmChain } from '../node_modules/@moralisweb3/evm-utils';
+import { EvmChain } from '@moralisweb3/evm-utils';
 
 const address = '0x60255c6De2cf768D5cE89f54eDb42D4E374a3177';
 const chain = EvmChain.MUMBAI;
@@ -17,7 +17,7 @@ function HomePage() {
         chain,
     });
     response.then((res) => {
-        console.log("what response is : ", res._data.result)
+        console.log("nfts : ", res._data.result)
     })
 
     return (
