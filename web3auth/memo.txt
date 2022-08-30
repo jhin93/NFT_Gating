@@ -1,0 +1,11 @@
+
+- 수정할 점
+
+1. protected.js에 토큰 주소가 수동으로 입력되어 있다. 즉, 입력된 특정 nft만 소유주에게 보여준다는 것. 
+원인 : 그냥 앱이 그렇게 만들어졌음
+개선 방향 : 소유한 모든 nft가 노출이 되어야 하고, 거기에 소유주가 접근할 수 있어야 함. 또 nft마다 썸네일과 다운로드 링크가 자동 생성되어야 함.
+
+1-1. 입력된 특정 nft에 접근할 때, 소유주가 아닐 경우 "Sorry, you don't have our NFT" 가 노출이 되어야 하는데 안되고 있음.
+원인 : Cannot read property 'metadata' of undefined. metadata를 못읽음.
+<pre>{JSON.stringify(nftList, null, 2)}</pre> -- 원래 코드는 이거였고 내가 변형한 코드를 못읽음 
+개선 방향 : 다른 계정으로 로그인했을 때, 에러로 안 뜨는게 아니라 "Sorry..."로 시작하는 구문이 나와야 함.

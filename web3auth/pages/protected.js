@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 function Protected({ message, nftList, metaData }) {
     const {push} = useRouter();
+    
     const downlink = JSON.stringify(metaData).split(',')[1].split('"')[3]
     return(
         <div>
