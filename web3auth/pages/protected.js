@@ -43,7 +43,7 @@ export async function getServerSideProps(context) {
         address: session.user.address,
         // opensea-testnet 의 nft중 하나. polygon_nft_test 계정의 nft
         tokenAddress: '0x79daf157C85772d6975b88cdCE4606ae33FBace6',
-        // 80001은 뭄바이라서 입력. 기본은 1이고 이건 이더리움
+        // 80001은 뭄바이라서 입력. 기본은 이더리움(1).
         chain: 80001 
     });
 
