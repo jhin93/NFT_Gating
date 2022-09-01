@@ -7,19 +7,20 @@ const chain = EvmChain.MUMBAI;
 let response;
 
 
-function HomePage() {
-    Moralis.start({
-        apiKey: 'wuTRXSGYCbL42JbmFQH7SKkKCg6OE6uDuWJS3moULHsKK912VMGJanJvEE7JRFvf',
-    });
+function HomePage(nftData) {
+    // Moralis.start({
+    //     apiKey: 'wuTRXSGYCbL42JbmFQH7SKkKCg6OE6uDuWJS3moULHsKK912VMGJanJvEE7JRFvf',
+    // });
     
-    response = Moralis.EvmApi.account.getNFTs({
-        address,
-        chain,
-    });
-    response.then((res) => {
-        console.log("nfts : ", res._data.result)
-    })
-
+    // response = Moralis.EvmApi.account.getNFTs({
+    //     address,
+    //     chain,
+    // });
+    // response.then((res) => {
+    //     console.log("nfts : ", res._data.result)
+    // })
+    
+    console.log(nftData)
     return (
         <div>
             Welcome to Next.js! 
@@ -29,6 +30,22 @@ function HomePage() {
     )
 }
 
+export async function getServerSideProps(context) {
+
+    await Moralis.start({ apiKey: process.env.MORALIS_API_KEY });
+
+    const nftData = await Moralis.EvmApi.account.getNFTs({
+        address,
+        chain
+    });
+
+    return {
+        props: {
+            nftData
+        },
+    };
+
+}
 
 
 export default HomePage;
