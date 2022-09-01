@@ -20,7 +20,8 @@ function HomePage(nftData) {
     //     console.log("nfts : ", res._data.result)
     // })
     
-    console.log(nftData)
+    console.log("nftData : ", nftData)
+
     return (
         <div>
             Welcome to Next.js! 
@@ -30,22 +31,23 @@ function HomePage(nftData) {
     )
 }
 
-export async function getServerSideProps(context) {
-
+export async function getServerSideProps() {
     await Moralis.start({ apiKey: process.env.MORALIS_API_KEY });
 
     const nftData = await Moralis.EvmApi.account.getNFTs({
         address,
-        chain
-    });
+        chain 
+    }).then((res) => {res._data});
+
+
 
     return {
         props: {
-            nftData
-        },
-    };
-
+            nftData: nftData
+        }
+    }
 }
+
 
 
 export default HomePage;
