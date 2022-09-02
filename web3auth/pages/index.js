@@ -16,7 +16,7 @@ function HomePage({nftData}) {
             <br></br>
             <a href='http://localhost:3000/signin'>Go to SignIn</a>
             <br></br>
-            <p>test</p>
+            {/* <p>test</p> */}
             {nftData.map((nft) => { // react에서의 key. https://www.youtube.com/watch?v=ghxHAy3LH28
                 return (<p key={nft.tokenAddress}>{JSON.stringify(nft.metadata)}</p>)
             })}
