@@ -4,10 +4,10 @@ import { EvmChain } from '@moralisweb3/evm-utils';
 
 const address = process.env.ACCOUNT;
 const chain = EvmChain.MUMBAI;
-let testnft;
 
 
 function HomePage({nftData}) {
+    
     console.log("nftData : ", nftData)
 
     return (
@@ -15,6 +15,11 @@ function HomePage({nftData}) {
             Welcome to Next.js! 
             <br></br>
             <a href='http://localhost:3000/signin'>Go to SignIn</a>
+            <br></br>
+            <p>test</p>
+            {nftData.map((nft) => { // react에서의 key. https://www.youtube.com/watch?v=ghxHAy3LH28
+                return (<p key={nft.tokenAddress}>{JSON.stringify(nft.metadata)}</p>)
+            })}
         </div>
     )
 }
